@@ -12,13 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
 <body>
-    <header class="fixed-top py-5">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-pill px-4">
-                <a class="navbar-brand" href="#">
+    <header class="fixed-top p-sm-4">
+        <div class="container px-0 px-lg-1">
+            <nav class="navbar navbar-expand-lg bg-white px-4">
+                <a class="navbar-brand" href="index.html">
                     <img src="assets/img/image/loading.svg" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -28,25 +29,22 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#list">Liste</a>
+                            <a class="nav-link active" href="liste.html">Liste</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Listings</a>
+                            <a class="nav-link" href="kategori.html">Kategoriler</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Members</a>
+                            <a class="nav-link" href="detay.html">Detay</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="#">Haberler</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#">İletişim</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
@@ -74,63 +72,73 @@
             </div>
 
             <div class="row">
-                <div class="d-none d-lg-block col-lg-2">
-                    <div class="property-filter mb-3">
-                        <div class="property-filter-content">
-                            <div class="property-filter-content-title">
-                                Kategoriler
-                            </div>
-                            <div class="property-filter-content-element">
-                                <a href="#" class="filter-link">Kiralık</a>
-                                <a href="#" class="filter-link">Satılık</a>
-                                <a href="#" class="filter-link">Yazlık</a>
-                                <a href="#" class="filter-link">Devren Kiralık</a>
-                                <a href="#" class="filter-link">Villa</a>
-                                <a href="#" class="filter-link">Yalı</a>
-                            </div>
-                        </div>
-                        <div class="property-filter-content">
-                            <div class="property-filter-content-title">
-                                İlan Tipi
-                            </div>
-                            <div class="property-filter-content-element">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Kiralik
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                        checked>
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Satilik
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="property-filter-content">
-                            <div class="property-filter-content-title">
-                                Danişman Seçimi
-                            </div>
-                            <div class="property-filter-content-element">
-                                <select class="form-select">
-                                    <option disable selected hidden>Danşman Seçiniz</option>
-                                    <option value="1">Özlem</option>
-                                    <option value="2">Sıla</option>
-                                    <option value="3">Ayşe</option>
-                                </select>
-                            </div>
-
-
-                        </div>
-
-                    </div>
+                <div class="col-12 d-lg-none mb-4">
+                    <button class="btn btn-main-one text-white"
+                        onclick="propertyFilterDrawer.classList.toggle('active')">Filtre</button>
                 </div>
-                <div class="col-12 col-lg-10">
+                <div class="col-lg-3 ">
+                    <div id="propertyFilterDrawer" class="property-filter-wrapper">
+                        <div class="property-filter mb-3">
+                            <div class="property-filter-content">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="property-filter-content-title">
+                                        Kategoriler
+                                    </div>
+                                    <button class="d-flex d-lg-none btn btn-main-one text-white"
+                                        onclick="propertyFilterDrawer.classList.toggle('active')">Kapat</button>
+                                </div>
+                                <div class="property-filter-content-elements">
+                                    <a href="#" class="filter-link">Kiralık</a>
+                                    <a href="#" class="filter-link">Satılık</a>
+                                    <a href="#" class="filter-link">Yazlık</a>
+                                    <a href="#" class="filter-link">Devren Kiralık</a>
+                                    <a href="#" class="filter-link">Villa</a>
+                                    <a href="#" class="filter-link">Yalı</a>
+                                </div>
+                            </div>
+                            <div class="property-filter-content">
+                                <div class="property-filter-content-title">
+                                    İlan Tipi
+                                </div>
+                                <div class="property-filter-content-element">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Kiralik
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            Satilik
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-filter-content">
+                                <div class="property-filter-content-title">
+                                    Danişman Seçimi
+                                </div>
+                                <div class="property-filter-content-element">
+                                    <select class="form-select">
+                                        <option disable selected hidden>Danşman Seçiniz</option>
+                                        <option value="1">Özlem</option>
+                                        <option value="2">Sıla</option>
+                                        <option value="3">Ayşe</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-filter-overlay" onclick="propertyFilterDrawer.classList.toggle('active')">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-12 col-lg-9">
                     <div class="row">
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -182,7 +190,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -234,7 +242,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -286,7 +294,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -338,7 +346,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -390,7 +398,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -442,7 +450,7 @@
 
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <div class="property-card">
                                 <div class="property-card-image">
                                     <div class="property-card-image-tag">
@@ -497,30 +505,189 @@
                     </div>
     </section>
 
-    <section>
-        <div class="container">
+    <section class="category-header py-5">
+        <div class="container py-5 mt-5">
             <div class="row">
-                <div class="col-3">
-                    <div class="basketball-card">
-
-                        <div class="basketball-card-content">
-                            <div class="d-flex pl-2">
-                                <div class="basketball-card-content-logo">
-                                    <i class="icon icon-w20 icon-micheal"></i>
-                                </div>
-                                <div class="basketball-card-content-name">Michael Jordan</div>
-                            </div>
-                            <div class="basketball-card-content-description">
-                                <span>Age</span>
-                            </div>
-
+                <div class="col-12 col-lg-8">
+                    <div class="d-flex flex-column justify-content-center gap-3 h-100">
+                        <div class="fs-6 fw-light text-main-one">From as low as $10 per day with limited time offer
+                            discounts.</div>
+                        <div class="display-3 fw-medium text-main-one">Your <span class="text-main-two">Property</span>,
+                            Our Priority.
                         </div>
-                        <img src="assets/img/image/Michael.webp" class="basketball-card" alt="">
+                        <div class="category-header-search my-4">
+                            <div class="row">
+                                <div class="col-12 col-md-4 col-lg-3 border-end">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <label for="search" class="small text-body-tertiary">Keyword</label>
+                                        <input type="text" id="search" class="search-input" placeholder="Enter Keyword">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 border-end">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <label for="search" class="small text-body-tertiary">Status</label>
+                                        <select class="form-select border-0 ps-0">
+                                            <option selected disable hidden>All status</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3 border-end">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <label for="type" class="small text-body-tertiary">Type</label>
+                                        <select class="form-select border-0 ps-0">
+                                            <option selected disable hidden>All Type</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3 pt-2 pt-lg-0">
+                                    <div class="d-flex align-items-center gap-2 h-100">
+                                        <div class="btn-main btn-main-white text-black w-100">Filter</div>
+                                        <div class="btn-main btn-main-two text-black w-100">Search</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="text-main-one fw-medium fs-6 me-3">Popular Search</div>
+                            <div class="d-flex align-items-center gap-1 ">
+                                <span class="px-3 py-1 small rounded-pill bg-white border text-main-one">Modern
+                                    Villa</span>
+                                <span class="px-3 py-1 small rounded-pill bg-white border text-main-one">Status
+                                    Apartment</span>
+                                <span class="px-3 py-1 small rounded-pill bg-white border text-main-one">Town
+                                    House </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-4 position-relative d-none d-lg-block ">
+                    <div class="category-header-content">
+                        <div class="category-header-content-profile">
+                            <img src="assets/img/profile-picture/ronaldo.jpg" alt="profile photo">
+                            <img src="assets/img/profile-picture/messi.jpg" alt="profile photo">
+                            <img src="assets/img/profile-picture/neymar.jpg" alt="profile photo">
+                        </div>
+                        <div class="category-header-content-profile-desc">
+                            <b>100k+</b>
+                            <span>Exclusive Agetns</span>
+                        </div>
+                    </div>
+                    <div class="row g-2 h-100">
+                        <div class="col-6 category-header-image-one">
+                            <img src="assets/img/category-header/image-3.jpg" alt="category-header">
+                            <img src="assets/img/category-header/image-2.jpg" alt="category-header">
+                        </div>
+                        <div class="col-6 category-header-image-two">
+                            <img src="assets/img/category-header/image.jpg" alt="category-header">
+                            <img src="assets/img/category-header/image-1.jpg" alt="category-header">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div class="d-flex flex-column">
+                    <span class="d-block fs-1 fw-medium lh-sm mb-1">Find Properties in These Cities</span>
+                    <span class="d-block fs-6 fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </div>
+                <a href="#" class="d-flex align-items-center gap-1 fs-6 text-dark text-decoration-none">
+                    View All Cities <i class="icon icon-dark icon-arrow-right"></i>
+                </a>
+            </div>
+            <div class="swiper slider--category-property">
+                <div class="swiper-wrapper pb-5">
+                    <div class="swiper-slide">
+                        <div class="category-property-card">
+                            <div class="category-property-card-image">
+                                <img src="assets/img/these-cities/city-1.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <strong class="fs-5">New York</strong>
+                                <span class="">8 Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="category-property-card">
+                            <div class="category-property-card-image">
+                                <img src="assets/img/these-cities/city-2.jpg" alt="">
+                            </div>
+                            <div class=" d-flex flex-column justify-content-center">
+                                <strong class="fs-5 ">San Diego </strong>
+                                <span class="">0 Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="category-property-card">
+                            <div class="category-property-card-image">
+                                <img src="assets/img/these-cities/city-3.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <strong class="fs-5 ">Miami</strong>
+                                <span class="">2 Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="category-property-card">
+                            <div class="category-property-card-image">
+                                <img src="assets/img/these-cities/city-4.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <strong class="fs-5 ">Los Angeles</strong>
+                                <span class="">8 Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="category-property-card">
+                            <div class="category-property-card-image">
+                                <img src="assets/img/these-cities/city-5.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <strong class="fs-5 ">New York</strong>
+                                <span class="">8 Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <script>
+            const sliderCategoryProperty = new Swiper(".slider--category-property", {
+                slidesPerView: 1.75,
+                spaceBetween: 15,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        </script>
+    </section>
+
+
+
 
     <footer>
         <div class="container py-6">
